@@ -1,0 +1,43 @@
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    font-size: 13px;
+    margin: 0px auto auto auto;
+    color: #554433;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Basic */
+#left, #right {
+    float: left;
+    width: 300px;
+    display: inline;
+}
+
+/* Select Menu */
+.select-multiple-column {
+    float: left;
+    width: 150px;
+}
+.select-multiple-opt, .select-multiple-opt label, .select-multiple-opt input {
+    float: left;
+}
+.select-multiple-opt {
+    width: 150px;
+}
+.select-multiple-opt label {
+    padding: 3px;
+}
