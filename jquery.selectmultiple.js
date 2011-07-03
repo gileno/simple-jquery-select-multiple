@@ -1,7 +1,8 @@
 (function($) {
     $.fn.selectMultiple = function(options) {
         var defaults = {
-            containers: 1
+            containers: 1,
+            search: true
         };
         var settings = $.extend(defaults, options);
         return this.each(function(x) {
@@ -14,6 +15,7 @@
                 "class": 'select-multiple-column'
             });
             var containers = settings.containers;
+            var search = settings.search;
             var totalOpts = selectOptions.length;
             var remainder = totalOpts % containers;
             var by_columns = (totalOpts - remainder) / containers;
@@ -64,9 +66,33 @@
                     container.append(column);
                 }
             });
+            container.append("<div class='clear' />");
+            if(search) {
+                var search_form = $("<form />", {
+                    action: '',
+                    id: 'form-select-multiple'
+                });
+                var search_input = $("<input type='text' />");
+                search_input.keyup(function() {
+                    var filter = normalizeText($(this).val());
+                    $('.select-multiple-opt label').each(function() {
+                        var filename = normalizeText($(this).text());
+                        if (filename.search(filter) != -1) {
+                            $(this).closest(".select-multiple-opt").show();
+                        } else {
+                            $(this).closest(".select-multiple-opt").hide();
+                        }
+                    });
+                });
+                search_form.append(search_input);
+                select.before(search_form);
+                $('.select-multiple-opt label').each(function() {
+                    var filename = normalizeText($('a.name', $(this)).text());
+                    alert(filename);
+                });
+            }
             select.after(container);
             select.hide();            
         });
     }
 })(jQuery);
-

@@ -27,16 +27,29 @@ h2 {
     display: inline;
 }
 
-/* Select Menu */
-.select-multiple-column {
-    float: left;
-    width: 150px;
+/* jQuery Simple Select Menu */
+div.select-multiple-container {
+    height: 130px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+    padding: 5px 8px;
 }
-.select-multiple-opt, .select-multiple-opt label, .select-multiple-opt input {
+div.select-multiple-column {
     float: left;
+    width: 190px;
+    margin: 0;
 }
-.select-multiple-opt {
-    width: 150px;
+.select-multiple-opt input {
+    display: inline;
+    position: relative;
+    top: 3px;
+}
+.select-multiple-opt label, .select-multiple-opt input {
+    display: inline;
+}
+div.select-multiple-opt {
+    width: 190px;
+    margin: 5px 0;
 }
 .select-multiple-opt label {
     padding: 3px;
