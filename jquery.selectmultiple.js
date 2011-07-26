@@ -88,7 +88,6 @@
                 select.before(search_form);
                 $('.select-multiple-opt label').each(function() {
                     var filename = normalizeText($('a.name', $(this)).text());
-                    alert(filename);
                 });
             }
             select.after(container);
